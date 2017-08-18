@@ -24,11 +24,7 @@ ul, li {
 	color: #333;
 }
 a {
-	color: orange;
-	text-decoration: none;
-}
-a:hover, a:focus {
-	color: #3397db;
+	color: #b56000;
 	text-decoration: none;
 }
 a img{
@@ -52,8 +48,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   clear: both;
 }
 #footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: white;
+  color: #555;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
@@ -64,14 +60,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 nav {
   width: 100%;
   height: auto;
-  background-color: #252831;
+  background-color: #ccc;
   text-align:center;
 }
 nav h1 {
   margin: auto;
 }
 nav h1 a {
-  color: #fff;
+  color: #333;
   font-size: 16pt;
   font-weight: 200;
   letter-spacing: 10px;
@@ -80,7 +76,7 @@ nav h1 a {
 #breadcrumb {
   padding: 10px 40px 16px;
   list-style: none;
-  background-color: #eee;
+  background-color: white;
   font-size: 17px;
   margin: 0;
   width: 100%;
@@ -120,7 +116,7 @@ nav h1 a {
   width: 100%;
   height: auto;
 	padding: 10px;
-  background-color: #3397DB;
+  background-color: #005e8f;
   align-items: center;
 }
 .filter-options h2 {
@@ -140,6 +136,10 @@ nav h1 a {
 	margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+
+.select-label {
+	color: white;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -174,7 +174,7 @@ nav h1 a {
   height: auto;
 }
 #restaurants-list li h1 {
-  color: #f18200;
+  color: #b56000;
   font-family: Arial,sans-serif;
   font-size: 14pt;
   font-weight: 200;
@@ -188,7 +188,7 @@ nav h1 a {
   font-size: 11pt;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #b56000;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
@@ -230,7 +230,7 @@ nav h1 a {
 	width: calc(50% - 30px);
 }
 #restaurant-name {
-  color: #f18200;
+  color: #aa5a00;
   font-family: Arial,sans-serif;
   font-size: 20pt;
   font-weight: 200;
@@ -271,7 +271,7 @@ nav h1 a {
 	width: calc(50% - 30px);
 }
 #reviews-container h2 {
-  color: #f58500;
+  color: #aa5a00;
   font-size: 24pt;
   font-weight: 300;
   letter-spacing: -1px;

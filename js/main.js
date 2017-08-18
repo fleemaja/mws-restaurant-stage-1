@@ -84,7 +84,16 @@ window.initMap = () => {
     var center = map.getCenter()
     google.maps.event.trigger(map, "resize")
     map.setCenter(center)
-  })
+  });
+  // give all images in google map container an alt tag
+  google.maps.event.addListener(map, 'tilesloaded', function(evt) {
+    const images = document.querySelectorAll("#map-container img");
+    images.forEach(function(eimg) {
+      if(!eimg.alt || eimg.alt === ""){
+         eimg.alt = "Google Maps Image";
+      }
+    });
+  });
   updateRestaurants();
 }
 
@@ -146,6 +155,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');

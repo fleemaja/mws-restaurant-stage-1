@@ -3,6 +3,8 @@ const restaurantReviewsCache = 'reviews-v0.01';
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(restaurantReviewsCache).then(function(cache) {
+      // not a scalable/maintainable way to cache
+      // use build tool if project changes/gets more complicated
       return cache.addAll(
         [
           '/',
@@ -11,6 +13,8 @@ self.addEventListener('install', function(event) {
           '/js/dbhelper.js',
           '/js/main.js',
           '/js/restaurant_info.js',
+          '/data/restaurants.json',
+          '/css/styles.css',
           '/img/1.jpg',
           '/img/2.jpg',
           '/img/3.jpg',
@@ -20,9 +24,7 @@ self.addEventListener('install', function(event) {
           '/img/7.jpg',
           '/img/8.jpg',
           '/img/9.jpg',
-          '/img/10.jpg',
-          '/data/restaurants.json',
-          '/css/styles.css'
+          '/img/10.jpg'
         ]
       );
     })

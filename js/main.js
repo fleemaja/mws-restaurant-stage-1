@@ -5,19 +5,19 @@ var map
 var markers = []
 
 // check if browser supports service workers and register this app's SW file if so
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/serviceWorker.js', { scope: '/' }).then(function(registration) {
-        if (registration.installing) {
-          console.log('Service worker installing');
-        } else if (registration.waiting) {
-          console.log('Service worker waiting');
-        } else if (registration.active) {
-          console.log('Service worker active');
-        }
-    }).catch(function(error) {
-      console.log('Service worker registration failed: ' + error);
-    });
-};
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/serviceWorker.js', { scope: '/' }).then(function(registration) {
+//         if (registration.installing) {
+//           console.log('Service worker installing');
+//         } else if (registration.waiting) {
+//           console.log('Service worker waiting');
+//         } else if (registration.active) {
+//           console.log('Service worker active');
+//         }
+//     }).catch(function(error) {
+//       console.log('Service worker registration failed: ' + error);
+//     });
+// };
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -106,6 +106,7 @@ window.initMap = () => {
     images.forEach(function(eimg) {
       if(!eimg.alt || eimg.alt === ""){
          eimg.alt = "Google Maps Image";
+         eimg.title = "Google Maps Image";
       }
     });
   });
@@ -171,6 +172,7 @@ createRestaurantHTML = (restaurant) => {
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt = restaurant.name;
+  image.title = restaurant.name;
   li.append(image);
 
   const name = document.createElement('h1');

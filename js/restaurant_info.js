@@ -20,6 +20,7 @@ window.initMap = () => {
         images.forEach(function(eimg) {
           if(!eimg.alt || eimg.alt === ""){
              eimg.alt = "Google Maps Image";
+             eimg.title = "Google Maps Image";
           }
         });
       });
@@ -68,6 +69,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt = restaurant.name;
+  image.title = restaurant.name;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;

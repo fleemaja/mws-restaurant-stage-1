@@ -24,6 +24,11 @@ window.initMap = () => {
           }
         });
       });
+      google.maps.event.addDomListener(window, 'resize', function() {
+        var center = map.getCenter()
+        google.maps.event.trigger(map, "resize")
+        map.setCenter(center)
+      });
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }

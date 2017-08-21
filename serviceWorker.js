@@ -3,7 +3,7 @@ const restaurantReviewsCache = 'reviews-v0.01';
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(restaurantReviewsCache).then(function(cache) {
-      // not a scalable/maintainable way to cache
+      // not a scalable/maintainable way to cache project assets
       // use build tool if project changes/gets more complicated
       return cache.addAll(
         [
@@ -37,7 +37,7 @@ self.addEventListener('activate', function(event) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
           return cacheName.startsWith('reviews-') &&
-                cacheName != staticCacheName;
+                cacheName != restaurantReviewsCache;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })
